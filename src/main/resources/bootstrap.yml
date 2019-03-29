@@ -1,0 +1,19 @@
+server:
+  port: 8902
+spring:
+  application:
+    name: subjectstudy
+  cloud:
+    config:
+      uri: http://192.168.9.110:8888/config/
+      name: ${spring.application.name}
+      profile: default
+eureka:
+  client:
+  #部署修改  common.js 修改 prefix="/subojetstudy/"  注掉 不加入eureka  110环境和116环境
+    register-with-eureka: false
+    serviceUrl:
+      defaultZone: http://192.168.9.110:8761/eureka/
+  instance:
+    preferIpAddress: true
+
