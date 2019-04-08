@@ -36,6 +36,10 @@ public class ErrorCode {
     public static Integer ERROR_CODE_1010 = 1010;
     //查看详情页面失败!
     public static Integer ERROR_CODE_1011 = 1011;
+    //查询课题研究菜单失败!
+    public static Integer ERROR_CODE_1012 = 1012;
+    //查询系统按钮失败！
+    public static Integer ERROR_CODE_1013 = 1013;
 
     /**
      * 根据错误码返回错误信息 错误码在errordoe.preperties中，错误码code不包含前缀erroe_code_。

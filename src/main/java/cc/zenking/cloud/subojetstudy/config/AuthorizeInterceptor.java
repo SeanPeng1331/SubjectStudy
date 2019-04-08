@@ -19,10 +19,6 @@ public class AuthorizeInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        CurrentUser user = new CurrentUser();
-        user.setUser(40003);
-        user.setBureau(123);
-        CurrentUser.setCurrentUser(user);
         return true;
     }
 

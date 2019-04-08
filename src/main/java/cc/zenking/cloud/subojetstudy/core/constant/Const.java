@@ -6,8 +6,17 @@ package cc.zenking.cloud.subojetstudy.core.constant;
  */
 public class Const {
 
-    public static String ADD = "add";
-    public static String UPDATE = "update";
+	public static String ADD = "add";
+	
+	public static String UPDATE = "update";
+	
+	public static String SYSTEM_NAME = "subojetstudy";
+	
+	public static String SYSTEM_LOGIN = "login";
+	
+	public static final String LOGIN_GATE = "login:gate:session:";
+
+	public static final String GATE_TOKEN = "gateToken";
 
     /**
      * 轮播图

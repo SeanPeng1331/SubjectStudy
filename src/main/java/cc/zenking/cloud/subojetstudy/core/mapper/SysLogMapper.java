@@ -11,18 +11,29 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface SysLogMapper {
+
     /**
      * 插入sys_log表
      *
      * @param sysLog
      * @return
      */
-    @Insert("insert into sys_log (description,log_time,name,log_operator,log_type,user_type,flag,platform,operating,operating_type,result_status) values(#{entity.description},#{entity.logTime},#{entity.name},#{entity.operator},#{entity.type},#{entity.userType},0,#{entity.platform},#{entity.operating},#{entity.operatingType},#{entity.resultStatus})")
+    @Insert("insert into sys_log (description,log_time,name,log_operator,log_type,tenant_id,flag,platform,result_status) values(#{entity.description},#{entity.logTime},#{entity.name},#{entity.operator},#{entity.type},#{entity.tenantId},0,#{entity.platform},#{entity.resultStatus})")
     int add(@Param("entity") SysLog sysLog);
-    
+
+    /**
+     * 日志列表
+     * @param userId
+     * @param keyword
+     * @param pageRequest
+     * @param tenantId
+     * @return
+     */
     @SelectProvider(type = SysLogSql.class, method = "findSysLog")
-    List<SysLogVO> findSysLogList(@Param("userId") Integer userId,@Param("keyword") String keyword,@Param("page") PageRequest pageRequest);
+    List<SysLogVO> findSysLogList(@Param("userId") Integer userId, @Param("keyword") String keyword, @Param("page") PageRequest pageRequest, @Param("tenantId") Integer tenantId);
 
     @SelectProvider(type = SysLogSql.class, method = "findSysLogCount")
-    Integer findSysLogCount(@Param("userId") Integer userId,@Param("keyword") String keyword);
+    Integer findSysLogCount(@Param("userId") Integer userId,@Param("keyword") String keyword,@Param("tenantId") Integer tenantId);
+
+
 }

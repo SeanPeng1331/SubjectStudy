@@ -1,5 +1,8 @@
 package cc.zenking.cloud.subojetstudy.config;
 
+import java.util.List;
+
+import cc.zenking.cloud.subojetstudy.core.auth.ApplicationFunction;
 
 /**
  * @author: wanghongbo
@@ -16,20 +19,35 @@ public class CurrentUser {
     }
 
     public Integer user;
-
-    public Integer bureau;
     
     public Integer tenantId;
+    
+    public String realName;
+    
+    /**
+     * 当前选择的 应用权限
+     */
+    private List<ApplicationFunction> applicationFunctionList;
+    
+    
 
-    public Integer getBureau() {
-        return bureau;
-    }
+    /**
+	 * @return the applicationFunctionList
+	 */
+	public List<ApplicationFunction> getApplicationFunctionList() {
+		return applicationFunctionList;
+	}
 
-    public void setBureau(Integer bureau) {
-        this.bureau = bureau;
-    }
 
-    public Integer getUser() {
+	/**
+	 * @param applicationFunctionList the applicationFunctionList to set
+	 */
+	public void setApplicationFunctionList(List<ApplicationFunction> applicationFunctionList) {
+		this.applicationFunctionList = applicationFunctionList;
+	}
+
+
+	public Integer getUser() {
         return user=123456;
     }
 
@@ -72,6 +90,21 @@ public class CurrentUser {
 	public void setTenantId(Integer tenantId) {
 		this.tenantId = tenantId;
 	}
+
+	/**
+	 * @return the realName
+	 */
+	public String getRealName() {
+		return "张三";
+	}
+
+	/**
+	 * @param realName the realName to set
+	 */
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
     
+	
     
 }

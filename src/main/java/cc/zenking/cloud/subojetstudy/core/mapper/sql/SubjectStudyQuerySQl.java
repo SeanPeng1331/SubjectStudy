@@ -41,10 +41,10 @@ public class SubjectStudyQuerySQl {
         if (status!=null && !status.equals("")) {
         	sql.append("  AND status = '"+status+"'  ");
         }
-        if ((keyword!=null && !keyword.equals(""))) {
+        if (keyword!=null && !keyword.equals("")) {
         	sql.append(" AND subject_name LIKE '"+keyword+"%' ");
         }
-        sql.append("ORDER BY publish_time DESC limit  #{page.countOffset},#{page.limit}");
+        sql.append(" ORDER BY publish_time DESC limit  #{page.countOffset},#{page.limit}");
         return sql.toString();
     }
 	
@@ -65,7 +65,7 @@ public class SubjectStudyQuerySQl {
 		if (status!=null && !status.equals("")) {
         	sql.append("  AND status = '"+status+"'  ");
         }
-        if ((keyword!=null && !keyword.equals(""))) {
+        if (keyword!=null && !keyword.equals("")) {
         	sql.append(" AND subject_name LIKE '"+keyword+"%' ");
         }
 		sql.append(" ORDER BY publish_time DESC");
@@ -157,10 +157,10 @@ public class SubjectStudyQuerySQl {
         if (status!=null && !status.equals("")) {
         	sql.append("  AND status = '"+status+"'  ");
         }
-        if ((keyword!=null && !keyword.equals(""))) {
+        if (keyword!=null && !keyword.equals("")) {
         	sql.append(" AND subject_name LIKE '"+keyword+"%' ");
         }
-        sql.append("ORDER BY publish_time DESC limit  #{page.countOffset},#{page.limit}");
+        sql.append(" ORDER BY publish_time DESC limit  #{page.countOffset},#{page.limit}");
         return sql.toString();
     }
 	
@@ -181,7 +181,7 @@ public class SubjectStudyQuerySQl {
 		if (status!=null && !status.equals("")) {
         	sql.append("  AND status = '"+status+"'  ");
         }
-        if ((keyword!=null && !keyword.equals(""))) {
+        if (keyword!=null && !keyword.equals("")) {
         	sql.append(" AND subject_name LIKE '"+keyword+"%' ");
         }
 		sql.append(" ORDER BY publish_time DESC");

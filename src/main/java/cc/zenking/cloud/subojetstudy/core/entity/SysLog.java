@@ -13,19 +13,12 @@ import java.util.Date;
  */
 @Data
 public class SysLog {
+
     private Integer id;
     /**
      * 平台类型
      */
     private String platform;
-    /**
-     * 具体操作名称（功能或模块名）
-     */
-    private String operating;
-    /**
-     * 操作类型  OperatingType
-     */
-    private Integer operatingType;
     /**
      * 结果状态 ResultStatus
      */
@@ -33,7 +26,7 @@ public class SysLog {
     /**
      * 操作员
      */
-    private String operator;
+    private Integer operator;
     /**
      * 时间
      */
@@ -43,7 +36,7 @@ public class SysLog {
      */
     private String type;
     /**
-     * 日志名(分组）
+     * 操作名称
      */
     private String name;
     /**
@@ -51,14 +44,11 @@ public class SysLog {
      */
     private String description;
     /**
-     * 用户类型
+     * 机构id
      */
-    private String userType;
+    private Integer tenantId;
     /**
-     * 标记，用于数据恢复
-     * 0：普通日志
-     * 1：可恢复日志	此属性为‘1’时，name的值为类名加该对象ID，如：cc.zenking.edu.teacher.Teacher:1
-     * 2：数据已恢复
+     * 是否删除 0正常-1删除
      */
     private int flag;
 }

@@ -76,11 +76,12 @@ public class SubjectStudyController {
 	 */
 	@RequestMapping(value = "/updateFlowNode")
 	public ResponseEntity<Object> updateFlowNode(Integer id,String subjectName, Integer status) {
+		//检验流程节点
 		String flowNodeName = CheckFlowNode(status);
 		Integer userId = CurrentUser.getCurrentUser().getUser();
         Integer tenantId = CurrentUser.getCurrentUser().getTenantId();
         //添加日志
-        sysLogService.addLog(userId.toString(), "课题管理", flowNodeName, flowNodeName + subjectName, tenantId.toString());
+        sysLogService.addLog(userId, "课题管理", flowNodeName, subjectName, tenantId);
 		try {
 			subjectStudyService.updateFlowNode(id,status);
 		} catch (Exception e) {

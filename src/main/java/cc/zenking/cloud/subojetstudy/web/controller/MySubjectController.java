@@ -56,7 +56,7 @@ public class MySubjectController {
 			Integer userId = CurrentUser.getCurrentUser().getUser();
 			Integer tenantId = CurrentUser.getCurrentUser().getTenantId();
 			//添加日志
-	        sysLogService.addLog(userId.toString(), "我的课题", "申请课题 ", "申请课题 " + subjectStudy.getSubjectName(), tenantId.toString());
+			sysLogService.addLog(userId, "我的课题", "申请课题", subjectStudy.getSubjectName(), tenantId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("申请课题失败！");
@@ -105,7 +105,7 @@ public class MySubjectController {
 			Integer userId = CurrentUser.getCurrentUser().getUser();
 			Integer tenantId = CurrentUser.getCurrentUser().getTenantId();
 			//添加日志
-	        sysLogService.addLog(userId.toString(), "我的课题", "修改课题 ", "修改课题" + subjectStudy.getSubjectName(), tenantId.toString());
+	        sysLogService.addLog(userId, "我的课题", "修改课题 ", subjectStudy.getSubjectName(), tenantId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("修改课题失败！");
@@ -129,7 +129,7 @@ public class MySubjectController {
 			Integer userId = CurrentUser.getCurrentUser().getUser();
 			Integer tenantId = CurrentUser.getCurrentUser().getTenantId();
 			//添加日志
-	        sysLogService.addLog(userId.toString(), "删除课题", "删除课题 ", "删除课题" + subjectName, tenantId.toString());
+	        sysLogService.addLog(userId, "我的课题", "删除课题 ", subjectName, tenantId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error("删除课题失败！");
@@ -159,12 +159,12 @@ public class MySubjectController {
 			List<AchievementOrReport> subjectReportList = achievementRequest.getSubjectReportList();
 			if (subjectAchievementList.size() > 0) {
 				for (AchievementOrReport achievementOrReport : subjectAchievementList) {
-					sysLogService.addLog(userId.toString(), "提交成果", "提交成果 ", "提交成果" + achievementOrReport.getTitle(), tenantId.toString());
+					sysLogService.addLog(userId, "我的课题", "提交成果 ", achievementOrReport.getTitle(), tenantId);
 				}
 			}
 			if (subjectReportList.size() > 0) {
 				for (AchievementOrReport achievementOrReport : subjectReportList) {
-					sysLogService.addLog(userId.toString(), "提交报告", "提交报告 ", "提交报告" + achievementOrReport.getTitle(), tenantId.toString());
+					sysLogService.addLog(userId, "我的课题", "提交报告 ", achievementOrReport.getTitle(), tenantId);
 				}
 			}
 		} catch (Exception e) {
@@ -195,12 +195,12 @@ public class MySubjectController {
 			List<AchievementOrReport> subjectReportList = achievementRequest.getSubjectReportList();
 			if (subjectAchievementList.size() > 0) {
 				for (AchievementOrReport achievementOrReport : subjectAchievementList) {
-					sysLogService.addLog(userId.toString(), "修改成果", "修改成果 ", "修改成果" + achievementOrReport.getTitle(), tenantId.toString());
+					sysLogService.addLog(userId, "我的课题", "修改成果 ", achievementOrReport.getTitle(), tenantId);
 				}
 			}
 			if (subjectReportList.size() > 0) {
 				for (AchievementOrReport achievementOrReport : subjectReportList) {
-					sysLogService.addLog(userId.toString(), "修改报告", "修改报告 ", "修改报告" + achievementOrReport.getTitle(), tenantId.toString());
+					sysLogService.addLog(userId, "我的课题", "修改报告 ", achievementOrReport.getTitle(), tenantId);
 				}
 			}
 		} catch (Exception e) {

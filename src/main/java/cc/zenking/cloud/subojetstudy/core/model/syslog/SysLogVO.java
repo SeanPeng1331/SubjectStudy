@@ -4,6 +4,8 @@ import lombok.Data;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * Created with IntelliJ IDEA.
  * User: chengjunchao
@@ -13,6 +15,8 @@ import java.util.Date;
  */
 @Data
 public class SysLogVO {
+
+
     private Integer id;
 
     /**
@@ -22,11 +26,14 @@ public class SysLogVO {
     /**
      * 时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date logTime;
 
     /**
      * 内容
      */
     private String description;
+
+    private Integer creator;
 
 }

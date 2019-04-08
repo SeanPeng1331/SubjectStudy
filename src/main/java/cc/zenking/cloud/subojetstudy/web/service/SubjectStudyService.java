@@ -62,7 +62,7 @@ public class SubjectStudyService {
 	 * @param status  
 	 */  
 	@Transactional
-	public void updateFlowNode(Integer id, int status) {
+	public synchronized void updateFlowNode(Integer id, int status) {
 		Integer  tenantId= CurrentUser.getCurrentUser().getTenantId();
 		Integer  operator= CurrentUser.getCurrentUser().getUser();
 		subjectStudyMapper.updateFlowNode(id,status,tenantId,operator);
